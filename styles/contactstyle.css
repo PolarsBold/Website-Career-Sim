@@ -22,6 +22,34 @@ main {
   margin-bottom: 40px;
 }
 
+box {
+  display: flex;
+  margin: 4rem 4rem 2rem 4rem;
+  border-radius: 4px;
+  height: 20%;
+  background-color: lightgray;
+}
+
+.flex-text-container h2 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+box p {
+  margin-left: 1rem;
+  color: black;
+}
+
+button {
+  margin-left: 4rem;
+  padding: 0.5rem;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 .header-container {
   display: flex;
   justify-content: space-between;
@@ -31,6 +59,8 @@ main {
   height: 91px;
   width: 100%;
   background-color: rgb(0, 80, 25);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .page-title {
@@ -65,55 +95,14 @@ main {
   height: 100vh;
 }
 
-.flex-container div {
-  border: 2px solid red;
-}
-
 .flex-left-sidebar {
   flex: 0 0 192px;
   height: 100vh;
 }
 
-.flex-left-sidebar h2 {
-  margin-left: 1rem;
-}
-
-.flex-left-sidebar ul li {
-  margin-top: 0.5rem;
-  text-decoration: none;
-}
-
 .flex-text-container {
   flex: 1 1 1152px;
-  /* display: flex;
-    flex-direction: column;
-    flex-shrink: 1;
-    height: 100vh; */
   background-color: rgb(60, 60, 60);
-}
-
-.home-img-text-contaner {
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
-  top: 0;
-  padding-left: 0.5rem;
-  width: 100%;
-  font-size: 2rem;
-}
-
-.home-img-text-contaner img {
-  display: block;
-  margin: 1rem;
-  max-width: 250px;
-  height: auto;
-}
-
-.home-underimg-text {
-  text-align: center;
-  font-size: 1.5rem;
-  margin: 0.5rem;
-  font-style: italic;
 }
 
 .flex-right-sidebar {
@@ -127,12 +116,21 @@ main {
 .flex-footer {
   display: flex;
   align-self: flex-end;
+  justify-content: center;
   position: fixed;
   bottom: 0;
   z-index: 10;
   width: 100%;
   height: 40px;
   background-color: rgb(0, 80, 25);
+}
+
+.x-logo {
+  justify-content: space-around;
+  display: block;
+  margin: 0;
+  max-width: 100px;
+  height: auto;
 }
 
 @media (max-width: 1024px) {
@@ -175,7 +173,17 @@ main {
   }
 }
 
+@media (max-width: 900px) {
+  .flex-left-sidebar,
+  .flex-right-sidebar {
+    display: none;
+  }
+}
+
 @media (max-width: 650px) {
+  .flex-text-container h2 {
+    font-size: 2rem;
+  }
   .page-title {
     font-size: 2rem;
     align-self: center;
@@ -187,18 +195,5 @@ main {
 
   .flex-container {
     flex-direction: column;
-  }
-
-  .flex-left-sidebar {
-    text-align: center;
-  }
-
-  .flex-left-sidebar,
-  .flex-text-container {
-    width: 100%;
-  }
-
-  .flex-right-sidebar {
-    display: none;
   }
 }
